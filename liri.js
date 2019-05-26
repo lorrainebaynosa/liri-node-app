@@ -25,9 +25,8 @@ var cmdArgument = process.argv[3];
 // "movie-this"
 // "do-what-it-says"
 
-
-
 //  If no song is provided then your program will default to "The Sign" by Ace of Base.
+// If the user doesn't type a movie in, the program will output data for the movie 'Mr. Nobody.'
 
 console.log('process.argv', process.argv)
 
@@ -75,6 +74,7 @@ function concertThis(artist) {
             for (i = 0; i <results.length; i ++) {
                 console.log("Name of Venue: " + results[i].venue.name);
                 console.log("Venue location: " + results[i].venue);
+                console.log("Venue location, city: " + results[i].venue.city);
                 // console.log("Date of the Event: " + results[i].datetime);
                 var date = moment(results[i].datetime).format('L');
                 console.log("Date of the Event: " + date);
@@ -153,7 +153,7 @@ function movieThis(movieName) {
         return undefined
     } 
     // If the user doesn't type a movie in, the program will output data for the movie 'Mr. Nobody.' If you haven't watched "Mr. Nobody," then you should: <http://www.imdb.com/title/tt0485947/> It's on Netflix!
-    
+
     if (movieName === "Mr. Nobody") {
         console.log("If you haven't watched 'Mr. Nobody,' then you should: <http://www.imdb.com/title/tt0485947/> . It's on Netflix!");
     }
