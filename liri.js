@@ -34,8 +34,7 @@ var artist = process.argv[3];
 // SPOTIFY VAR
 var song = process.argv[3];
 // OMDB API:
-var nodeArgs = process.argv;
-var movieName = "";
+var movieName = process.argv[3];;
 
 // Node application called liri.js will take in in user inputs via the command line to register actions/commands.
 // The actions/commands possible are:
@@ -125,21 +124,19 @@ spotify.search({ type: "track", query: "Shallow" }, function (err, data) {
 
 
 // } else if (action === "movie-this") {
-// Contingency if user provides movie name with more than one word: Loop through all the words in the node argument
-// And do a little for-loop magic to handle the inclusion of "+"s
-for (var i = 2; i < nodeArgs.length; i++) {
-    if (i > 2 && i < nodeArgs.length) {
-        movieName = movieName + "+" + nodeArgs[i];
-    }
-    else {
-        movieName += nodeArgs[i];
-    }
-}
+
+// REVIEW OF CONCEPTS: 
+// 1. for movie with multiple words, split by spaces.
+// 2. The split() method splits a String object into an array of strings by separating the string into substrings, using a specified separator string to determine where to make each split. In this case, the specified separator is a space.
+// NOTE: To split a string with commas, write: .split(",");
+
+var movieArr = movieName.split(" ").join("+");
+console.log(movieArr);
 
 // Run a request with axios to OMDB API with movie entered in terminal
 // Use "axios" package to retrieve data from the OMDB API. OMDB API requires API key. You may use `trilogy`.
 
-var queryUrl = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=trilogy";
+var queryUrl = "http://www.omdbapi.com/?t=" + movieArr + "&y=&plot=short&apikey=trilogy";
 
 //  to debug against the actual URL.
 console.log(queryUrl);
