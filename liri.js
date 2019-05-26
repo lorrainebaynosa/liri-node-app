@@ -1,36 +1,21 @@
-require("dotenv").config();
-// to access .env file with environmental-specific vafriables, must require and configure dotenv as noted in documentation for dotenv: 
+// to access .env file with environmental-specific variables, must require and configure dotenv as noted in documentation for dotenv: 
 // https://www.npmjs.com/package/dotenv
 // process.env now has keys & values defined in .env file (dotenv loads environmental variables from .env file)
-// to require this, must init and install:
-// npm init
-// npm install dotenv: package.json will now have dotenv listed as a dependency
 
-// testing by entering into terminal: 
-// node liri.js
-// RETURNS: 
-// This is loaded
-// { id: '42be4d88c0c0459a90ef873c24f8fbf8',
-//   secret: '147b244c4ab84af3a3063d987a4fcc55' }
-// { spotify:
-//    { id: '42be4d88c0c0459a90ef873c24f8fbf8',
-//      secret: '147b244c4ab84af3a3063d987a4fcc55' } }
+require("dotenv").config();
 
-// REVIEW OF CONCEPTS:
-// ./ means it's part of the path to a directory/file (in current directory)
-// just to test that keys are being generated correctly:
-
-// Include the npm package 
-// enter the following in the terminal: npm init followed by npm install for npm packages dotenv and node-spotify-api
+// Include the npm packages:
+// enter the following in the terminal: npm init followed by npm install for npm packages dotenv, axios, moment, and node-spotify-api
 
 var axios = require("axios");
-var keys = require("./keys.js")
+var moment = require("moment");
 // import keys.js and store it in a variable; to access spotify keys
+var keys = require("./keys.js")
+console.log('keys', keys);
 var Spotify = require("node-spotify-api");
 // Load the fs package to read and write
 var fs = require('fs');
 var action = process.argv[2];
-console.log('keys', keys);
 var cmdArgument = process.argv[3];
 
 // Node application called liri.js will take in in user inputs via the command line to register actions/commands.
@@ -40,16 +25,16 @@ var cmdArgument = process.argv[3];
 // "movie-this"
 // "do-what-it-says"
 
-// * If the user doesn't type a movie in, the program will output data for the movie 'Mr. Nobody.'
-//   * If you haven't watched "Mr. Nobody," then you should: <http://www.imdb.com/title/tt0485947/>
 
-//   * It's on Netflix!
+
+//  If no song is provided then your program will default to "The Sign" by Ace of Base.
+
 console.log('process.argv', process.argv)
 
 if (action === "concert-this") {
     concertThis(cmdArgument);
 } else if (action === "spotify-this-song") {
-    spotifyThisSong(cmdArgument);
+    spotifyThisSong(cmdArgument || 'The Sign');
 } else if (action === "movie-this") {
     movieThis(cmdArgument || 'Mr.Nobody');
 } else if (action === "do-what-it-says") {
@@ -90,7 +75,13 @@ function concertThis(artist) {
             for (i = 0; i <results.length; i ++) {
                 console.log("Name of Venue: " + results[i].venue.name);
                 console.log("Venue location: " + results[i].venue);
-                console.log("Date of the Event: " + results[i].datetime);
+                // console.log("Date of the Event: " + results[i].datetime);
+                var date = moment(results[i].datetime).format('L');
+                console.log("Date of the Event: " + date);
+                // var randomDate = results[i].datetime;
+                // var randomFormat = "MM/DD/YYYY";
+                // var convertedDate = moment(randomDate, randomFormat);
+                // console.log("Date of the Event: " + convertedDate.format("MM/DD/YY"));
             }
         })
         .catch(function (error) {
@@ -125,13 +116,20 @@ function concertThis(artist) {
 // console.log(data.album);
 // https://www.npmjs.com/package/node-spotify-api
 
-function spotifyThisSong(query) {
+function spotifyThisSong(song) {
     var spotify = new Spotify(keys.spotify);
-    spotify.search({ type: "track", query: "Shallow" }, function (err, data) {
+    spotify.search({ type: "track", query: song }, function (err, data) {
         if (err) {
             return console.log("Error occurred: " + err);
         }
+        // console.log('data', data);
         console.log('spotify data', data.tracks.items);
+        for (i = 0; i <data.tracks.items.length; i++) {
+            console.log("Artists: " + data.tracks.items[i].artists);
+            console.log("Song's Name: " + data.tracks.items[i].name);
+            console.log("Preview Link of Song from Spotify: " + data.tracks.items[i].preview_url);
+            console.log("Album Song is From: " + data.tracks.items[i].album);
+        }
     });
 }
 
@@ -151,8 +149,13 @@ function movieThis(movieName) {
     // NOTE: To split a string with commas, write: .split(",");
     console.log('movieName in movieThis', movieName)
     if (!movieName) {
-        console.log('No movie name provided')
+        console.log('No movie name provided');
         return undefined
+    } 
+    // If the user doesn't type a movie in, the program will output data for the movie 'Mr. Nobody.' If you haven't watched "Mr. Nobody," then you should: <http://www.imdb.com/title/tt0485947/> It's on Netflix!
+    
+    if (movieName === "Mr. Nobody") {
+        console.log("If you haven't watched 'Mr. Nobody,' then you should: <http://www.imdb.com/title/tt0485947/> . It's on Netflix!");
     }
 
     var movieArr = movieName.split(" ").join("+");
@@ -172,15 +175,13 @@ function movieThis(movieName) {
             console.log("Title of Movie: " + response.data.Title);
             console.log("Year Movie Came Out: " + response.data.Year);
             console.log("IMDB Rating: " + response.data.imdbRating);
-            console.log(response.data.Ratings[1]);
+            // console.log(response.data.Ratings[1]);
             // test Rotten Tomatoes Rating
             console.log("Rotten Tomatoes Rating: " + response.data.Ratings[1].Value);
             console.log("Country where movie was produced: " + response.data.Country);
             console.log("Language of movie: " + response.data.Language);
             console.log("Plot of movie: " + response.data.Plot);
             console.log("Actors in movie: " + response.data.Actors);
-            // * If the user doesn't type a movie in, the program will output data for the movie 'Mr. Nobody.'
-//   * If you haven't watched "Mr. Nobody," then you should: <http://www.imdb.com/title/tt0485947/> . It's on Netflix!
         }
     );
 }
