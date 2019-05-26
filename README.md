@@ -22,7 +22,7 @@ What each command should do:
 2. example using command "concert-this" <artist/band name>, using Lifehouse as the band name:
 
 
-<img src="images/concert-this_Lifehouse.jpg" width="400">
+<img src="images/concert-this_Lifehouse.jpg" width="800">
 ![](images/concert-this_Lifehouse.jpg)
 
 
@@ -30,7 +30,7 @@ The information for each events displays on the terminal:
 
 
 
-<img src="images/concert-this_Lifehouse_data.jpg" width="400">
+<img src="images/concert-this_Lifehouse_data.jpg" width="800">
 ![](images/concert-this_Lifehouse_data.jpg)
 
 
