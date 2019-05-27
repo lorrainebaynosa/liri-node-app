@@ -35,7 +35,7 @@ The information for each event for Lifehouse displays on the terminal:
 
 
 
-The URICencodeURIComponent function allows us to see the same data for artists with more than one word (testing with Maroon 5): 
+The encodeURIComponent function allows us to see the same data for artists with more than one word (testing with Maroon 5): 
 
 
 <img src="images/concert-this_Maroon5.jpg" width="800">
@@ -200,6 +200,12 @@ The information for each movie displays on the terminal:
 
 <img src="images/do-what-it-says-concert-this.jpg" width="800">
 ![](images/do-what-it-says-concert-this.jpg)
+
+
+In order to test this code, the user will need to:
+1. initiate and install all the npm packages listed in liri.js
+2. obtain a client id and client secret from the Spotify API: <https://developer.spotify.com/my-applications/#!/>
+3. create your own '.env' file
 
 
 
