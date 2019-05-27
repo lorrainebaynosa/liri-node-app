@@ -94,7 +94,7 @@ The information for each song displays on the terminal:
 ![](images/spotify-this-song_Thriller_data.jpg)
 
 
-If no song is provided, "The Sign" from Ace of Base:
+If no song is provided, "The Sign" from Ace of Base is run:
 
 
 
@@ -163,7 +163,7 @@ The information for each movie displays on the terminal:
 
 
 
-<img src="do-what-it-says_spotify-this-song.jpg" width="800">
+<img src="images/do-what-it-says_spotify-this-song.jpg" width="800">
 ![](images/do-what-it-says_spotify-this-song.jpg)
 
 
@@ -173,7 +173,7 @@ The information for each movie displays on the terminal:
 
 
 
-<img src="do-what-it-says_spotify-this-song_data.jpg" width="800">
+<img src="images/do-what-it-says_spotify-this-song_data.jpg" width="800">
 ![](images/do-what-it-says_spotify-this-song_data.jpg)
 
      * Edit the text in random.txt to test out the feature for movie-this and concert-this. Testing with: movie-this,"Cinderella" RETURNS:
@@ -191,6 +191,17 @@ The information for each movie displays on the terminal:
 
 <img src="images/do-what-it-says-movie-this_data.jpg" width="800">
 ![](images/do-what-it-says-movie-this_data.jpg)
+
+
+* Edit the text in random.txt to test out the feature for movie-this and concert-this. Testing with: concert-this,"Maroon 5" RETURNS:
+
+
+
+
+<img src="images/do-what-it-says-concert-this.jpg" width="800">
+![](images/do-what-it-says-concert-this.jpg)
+
+
 
 
 
