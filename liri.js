@@ -11,7 +11,7 @@ var axios = require("axios");
 var moment = require("moment");
 // import keys.js and store it in a variable; to access spotify keys
 var keys = require("./keys.js")
-console.log('keys', keys);
+// console.log('keys', keys);
 var Spotify = require("node-spotify-api");
 // Load the fs package to read and write
 var fs = require('fs');
@@ -128,7 +128,7 @@ function spotifyThisSong(song) {
             console.log("Artists: " + data.tracks.items[i].artists);
             console.log("Song's Name: " + data.tracks.items[i].name);
             console.log("Preview Link of Song from Spotify: " + data.tracks.items[i].preview_url);
-            console.log("Album Song is From: " + data.tracks.items[i].album);
+            console.log("Album Song is From: " + data.tracks.items[i].album.name);
         }
     });
 }

@@ -19,7 +19,7 @@ What each command should do:
      * Venue location
      * Date of the Event (use moment to format this as "MM/DD/YYYY")
    * Requires installation of [axios] (https://www.npmjs.com/package/axios) package and [moment] (http://momentjs.com/docs) to retrieve event information related to artist.
-2. example using command "concert-this" <artist/band name>, using Lifehouse as the band name:
+   * example using command "concert-this" <artist/band name>, using Lifehouse as the band name:
 
 
 <img src="images/concert-this_Lifehouse.jpg" width="800">
@@ -65,6 +65,30 @@ The information for each event for Maroon 5 displays on the terminal:
      * The album that the song is from
         * If no song is provided then your program will default to "The Sign" by Ace of Base.
    * Requires installation of [node-spotify-api](https://www.npmjs.com/package/node-spotify-api) package to retrieve song information from the Spotify API.
+   * example using command "spotify-this-song" '<song name here>' using "Thriller" as the song: 
+
+
+
+<img src="images/spotify-this-song_Thriller1.jpg" width="800">
+![](images/spotify-this-song_Thriller1.jpg)
+
+
+
+<img src="images/spotify-this-song_Thriller2.jpg" width="800">
+![](images/spotify-this-song_Thriller2.jpg)
+
+
+
+<img src="images/spotify-this-song_Thriller3.jpg" width="800">
+![](images/spotify-this-song_Thriller3.jpg)
+
+The information for each song displays on the terminal:
+
+
+
+<img src="images/spotify-this-song_Thriller_data.jpg" width="800">
+![](images/spotify-this-song_Thriller_data.jpg)
+
 
 3. `node liri.js movie-this '<movie name here>'`
    * renders the following information about the movie to the terminal
