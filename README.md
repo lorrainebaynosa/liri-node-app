@@ -115,7 +115,7 @@ If no song is provided, "The Sign" from Ace of Base:
    * Requires installation of [axios] (https://www.npmjs.com/package/axios) package to retrieve data from the OMDB API. Use `trilogy` as API key for OMDB API.
    * If the user doesn't type a movie in, the program will output data for the movie 'Mr. Nobody.'
         * If you haven't watched "Mr. Nobody," then you should: <http://www.imdb.com/title/tt0485947/>. It's on Netflix!
-   * example using command "movie-this" '<movie name here>', using Pretty Woman as the movie:
+   * example using command "movie-this" '<movie name here>', using 'Pretty Woman' as the movie:
 
 
 
@@ -134,6 +134,26 @@ The information for each movie displays on the terminal:
 ![](images/movie-this_PrettyWoman_data.jpg)
 
 
+
+
+* If the user doesn't type a movie in, the program will output data for the movie 'Mr. Nobody.'
+        * If you haven't watched "Mr. Nobody," then you should: <http://www.imdb.com/title/tt0485947/>. It's on Netflix!
+   * example using command "movie-this" '<movie name here>', using 'Mr. Nobody' as the movie:
+
+
+
+<img src="images/movie-this_MrNobody.jpg" width="800">
+![](images/movie-this_MrNobody.jpg)
+
+
+
+The information for each movie displays on the terminal:
+
+
+
+
+<img src="images/movie-this_MrNobody_data.jpg" width="800">
+![](images/movie-this_MrNobody_data.jpg)
 
 
 4. `node liri.js do-what-it-says`
