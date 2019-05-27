@@ -26,7 +26,7 @@ What each command should do:
 ![](images/concert-this_Lifehouse.jpg)
 
 
-The information for each event displays on the terminal:
+The information for each event for Lifehouse displays on the terminal:
 
 
 
@@ -35,7 +35,20 @@ The information for each event displays on the terminal:
 
 
 
-Because a URICencodeURIComponent(artist)
+The URICencodeURIComponent function allows us to see the same data for artists with more than one word (testing with Maroon 5): 
+
+
+<img src="images/concert-this_Maroon5.jpg" width="800">
+![](images/concert-this_Maroon5.jpg)
+
+
+
+The information for each event for Maroon 5 displays on the terminal:
+
+
+
+<img src="images/concert-this_Maroon5_data.jpg" width="800">
+![](images/concert-this_Maroon5_data.jpg)
 
 
 
