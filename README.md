@@ -26,12 +26,16 @@ What each command should do:
 ![](images/concert-this_Lifehouse.jpg)
 
 
-The information for each events displays on the terminal:
+The information for each event displays on the terminal:
 
 
 
 <img src="images/concert-this_Lifehouse_data.jpg" width="800">
 ![](images/concert-this_Lifehouse_data.jpg)
+
+
+
+Because a URICencodeURIComponent(artist)
 
 
 
