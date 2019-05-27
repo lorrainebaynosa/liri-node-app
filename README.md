@@ -74,21 +74,33 @@ The information for each event for Maroon 5 displays on the terminal:
 
 
 
+
 <img src="images/spotify-this-song_Thriller2.jpg" width="800">
 ![](images/spotify-this-song_Thriller2.jpg)
+
 
 
 
 <img src="images/spotify-this-song_Thriller3.jpg" width="800">
 ![](images/spotify-this-song_Thriller3.jpg)
 
+
 The information for each song displays on the terminal:
+
 
 
 
 <img src="images/spotify-this-song_Thriller_data.jpg" width="800">
 ![](images/spotify-this-song_Thriller_data.jpg)
 
+
+If no song is provided, "The Sign" from Ace of Base:
+
+
+
+
+<img src="images/spotify-this-song_theSign1.jpg" width="800">
+![](images/potify-this-song_theSign1.jpg)
 
 3. `node liri.js movie-this '<movie name here>'`
    * renders the following information about the movie to the terminal
@@ -100,9 +112,29 @@ The information for each song displays on the terminal:
      * Language of the movie.
      * Plot of the movie.
      * Actors in the movie.
+   * Requires installation of [axios] (https://www.npmjs.com/package/axios) package to retrieve data from the OMDB API. Use `trilogy` as API key for OMDB API.
    * If the user doesn't type a movie in, the program will output data for the movie 'Mr. Nobody.'
         * If you haven't watched "Mr. Nobody," then you should: <http://www.imdb.com/title/tt0485947/>. It's on Netflix!
-   * Requires installation of [axios] (https://www.npmjs.com/package/axios) package to retrieve data from the OMDB API. Use `trilogy` as API key for OMDB API.
+   * example using command "movie-this" '<movie name here>', using Pretty Woman as the movie:
+
+
+
+
+
+<img src="images/movie-this_PrettyWoman.jpg" width="800">
+![](images/movie-this_PrettyWoman.jpg)
+
+
+The information for each movie displays on the terminal:
+
+
+
+
+<img src="images/movie-this_PrettyWoman_data.jpg" width="800">
+![](images/movie-this_PrettyWoman_data.jpg)
+
+
+
 
 4. `node liri.js do-what-it-says`
    * Uses `fs` Node package to take text inside of random.txt to call one of LIRI's commands.
