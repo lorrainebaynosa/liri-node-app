@@ -158,8 +158,43 @@ The information for each movie displays on the terminal:
 
 4. `node liri.js do-what-it-says`
    * Uses `fs` Node package to take text inside of random.txt to call one of LIRI's commands.
-     * It should run `spotify-this-song` for "I Want it That Way," as follows the text in `random.txt`.
-     * Edit the text in random.txt to test out the feature for movie-this and concert-this.
+     * It should run `spotify-this-song` for "I Want it That Way," as follows the text in `random.txt`:
+
+
+
+
+<img src="do-what-it-says_spotify-this-song.jpg" width="800">
+![](images/do-what-it-says_spotify-this-song.jpg)
+
+
+     * Information for "I Want it That Way," displays to terminal:
+
+
+
+
+
+<img src="do-what-it-says_spotify-this-song_data.jpg" width="800">
+![](images/do-what-it-says_spotify-this-song_data.jpg)
+
+     * Edit the text in random.txt to test out the feature for movie-this and concert-this. Testing with: movie-this,"Cinderella" RETURNS:
+
+
+
+<img src="images/do-what-it-says-movie-this.jpg" width="800">
+![](images/do-what-it-says-movie-this.jpg)
+
+
+The information for each movie displays on the terminal:
+
+
+
+
+<img src="images/do-what-it-says-movie-this_data.jpg" width="800">
+![](images/do-what-it-says-movie-this_data.jpg)
+
+
+
+
 
 
 
